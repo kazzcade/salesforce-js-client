@@ -4,5 +4,13 @@ node_js:
 
 script:
   - npm run lint
-  - npm test
   - npm run build
+
+deploy:
+  skip_cleanup: true
+  on:
+    tags: true
+  provider: npm
+  email: developer@cunae.com
+  api_key:
+    secure: DpXUxeWs7EFHZz1zY/4Pkpbxt+qPC7xYR4HmocqFtGEDxymc5/3R2CMDk28HQPYrAuVDM6YJy80c1gw/qGTKZjtZ2wAvl4m0hF5LxkCDMVrfDjHV5J0FkrAv/JbIIGm2hJrNrS7PEqG42LPUxxnZON2nzsH8UN3ExWEcR69kM/1JhIX0M5WJhXrA8CecdlxZYbW3TvI9/lOINNlKiau4WmG8/uNQxZc8FNzg/zeEWMvwSEBbM0/2YXE9bUAiPZ0pTpfROEQKqKlPIoYoBzYmZt07kATX/xbwTJcLP9grEhOQ+s2b4/X/5uI5YbxdNBoS2RFa8adR8fwO44919XYAlFSiNneQj+fHnx7bf677tUHB6wAzh5X1q/vFAP6TutE50xKLQ+UVxoJ7PabOJbnLNAP+dfzhE7nqO+WRsRJNcy68nLJcjMLvqWTyqvM7ygH5LDOg4UHaLMrXhvxwIaVOr0LpXj20lV50MRxGeYoWzjmrAiJxIEgGxdUewA76vbDVp113+WlJkpOqiUQpmWNfduhO8PbQRIq/8PJlLMR3dr5vR44FJKQQuel5wESTM8kuEjBlHhi+FZfr/kzahtI1mQkwFUZqK9T62UW/wi3+ciAtkV6r5ICgCppbD043Ijm4En/H951fBJPSBkG/ENDcP2xhZm0rIrK6U1KKvDya+VQ=
