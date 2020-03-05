@@ -1,6 +1,6 @@
 {
   "name": "@kazzcade/salesforcex",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Salesforce javascript client with rxjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
