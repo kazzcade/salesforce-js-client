@@ -1,5 +1,5 @@
 {
-  "name": "@kazzcade/salesforce-client",
+  "name": "@kazzcade/salesforcex",
   "version": "0.1.0",
   "description": "Salesforce javascript client with rxjs",
   "main": "dist/index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kazzcade/salesforce-js-client.git"
+    "url": "git+https://github.com/kazzcade/salesforcex.git"
   },
   "author": {
     "name": "Jhorlin DeArmas",
@@ -26,9 +26,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kazzcade/salesforce-js-client/issues"
+    "url": "https://github.com/kazzcade/salesforcex/issues"
   },
-  "homepage": "https://github.com/kazzcade/salesforce-js-client#readme",
+  "homepage": "https://github.com/kazzcade/salesforcex#readme",
   "devDependencies": {
     "@types/fs-extra": "^8.1.0",
     "@types/node": "^13.7.7",
