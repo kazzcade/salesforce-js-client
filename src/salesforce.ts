@@ -27,40 +27,17 @@ export type SObjectFieldMetaSummary = {
     length: number;
 };
 
-export type SObjectMeta = {
-    encoding: string;
-    maxBatchSize: number;
-    sobjects: {
-        activateable: boolean;
-        createable: boolean;
-        custom: boolean;
-        customSetting: boolean;
-        deletable: boolean;
-        deprecatedAndHidden: boolean;
-        feedEnabled: boolean;
-        hasSubtypes: boolean;
-        isSubtype: boolean;
-        keyPrefix: any;
-        label: string;
-        labelPlural: string;
-        layoutable: boolean;
-        mergeable: boolean;
-        mruEnabled: boolean;
-        name: string;
-        queryable: boolean;
-        replicateable: boolean;
-        retrieveable: boolean;
-        searchable: boolean;
-        triggerable: boolean;
-        undeletable: boolean;
-        updateable: boolean;
-        urls: {
-            rowTemplate: string;
-            defaultValues: string;
-            describe: string;
-            sobject: string;
-        };
-    }[];
+export type ChildRelationship = {
+
+    cascadeDelete: boolean;
+    childSObject: string;
+    deprecatedAndHidden: boolean;
+    field: string;
+    junctionIdListNames: any[];
+    junctionReferenceTo: any[];
+    relationshipName: string;
+    restrictedDelete: boolean;
+
 };
 
 export type SObjectDescription = {
@@ -72,16 +49,7 @@ export type SObjectDescription = {
         url: any;
     }[];
     activateable: boolean;
-    childRelationships: {
-        cascadeDelete: boolean;
-        childSObject: string;
-        deprecatedAndHidden: boolean;
-        field: string;
-        junctionIdListNames: any[];
-        junctionReferenceTo: any[];
-        relationshipName: string;
-        restrictedDelete: boolean;
-    }[];
+    childRelationships: ChildRelationship[];
     compactLayoutable: boolean;
     createable: boolean;
     custom: boolean;
@@ -89,65 +57,7 @@ export type SObjectDescription = {
     deletable: boolean;
     deprecatedAndHidden: boolean;
     feedEnabled: boolean;
-    fields: {
-        aggregatable: boolean;
-        aiPredictionField: boolean;
-        autoNumber: boolean;
-        byteLength: number;
-        calculated: boolean;
-        calculatedFormula: any;
-        cascadeDelete: boolean;
-        caseSensitive: boolean;
-        compoundFieldName: any;
-        controllerName: any;
-        createable: boolean;
-        custom: boolean;
-        defaultValue: any;
-        defaultValueFormula: any;
-        defaultedOnCreate: boolean;
-        dependentPicklist: boolean;
-        deprecatedAndHidden: boolean;
-        digits: number;
-        displayLocationInDecimal: boolean;
-        encrypted: boolean;
-        externalId: boolean;
-        extraTypeInfo: any;
-        filterable: boolean;
-        filteredLookupInfo: any;
-        formulaTreatNullNumberAsZero: boolean;
-        groupable: boolean;
-        highScaleNumber: boolean;
-        htmlFormatted: boolean;
-        idLookup: boolean;
-        inlineHelpText: any;
-        label: string;
-        length: number;
-        mask: any;
-        maskType: any;
-        name: string;
-        nameField: boolean;
-        namePointing: boolean;
-        nillable: boolean;
-        permissionable: boolean;
-        picklistValues: any[];
-        polymorphicForeignKey: boolean;
-        precision: number;
-        queryByDistance: boolean;
-        referenceTargetField: any;
-        referenceTo: any[];
-        relationshipName: any;
-        relationshipOrder: any;
-        restrictedDelete: boolean;
-        restrictedPicklist: boolean;
-        scale: number;
-        searchPrefilterable: boolean;
-        soapType: SoapType;
-        sortable: boolean;
-        type: string;
-        unique: boolean;
-        updateable: boolean;
-        writeRequiresMasterRead: boolean;
-    }[];
+    fields: SObjectField[];
     hasSubtypes: boolean;
     isSubtype: boolean;
     keyPrefix: string;
@@ -241,13 +151,7 @@ export type SObjectField = {
     namePointing: boolean;
     nillable: boolean;
     permissionable: boolean;
-    picklistValues: {
-        active: boolean;
-        defaultValue: boolean;
-        label: string;
-        validFor: any;
-        value: string;
-    }[];
+    picklistValues: SObjectFieldPicklistValue[];
     polymorphicForeignKey: boolean;
     precision: number;
     queryByDistance: boolean;

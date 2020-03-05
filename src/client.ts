@@ -5,7 +5,7 @@ import {filter, map, mergeMap, pluck, toArray} from 'rxjs/operators';
 import {moreOperator} from './lib/more';
 import {RequestOptions, RequestPool} from './lib/requestPool';
 import {statusOperator} from './lib/status';
-import {SObject, SObjectMeta, SObjectMetaSummary} from './salesforce';
+import {SObject, SObjectDescription, SObjectMetaSummary} from './salesforce';
 
 export type AuthRequest = {
     grant_type: string;
@@ -180,7 +180,7 @@ export class SalesforceClient {
         );
     }
 
-    public getObjectDescription(name: string): Observable<SObjectMeta> {
+    public getObjectDescription(name: string): Observable<SObjectDescription> {
         return this.auth.pipe(
             mergeMap((auth) =>
                 from(
