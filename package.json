@@ -1,6 +1,6 @@
 {
-  "name": "@kazz/salesforce-client",
-  "version": "1.0.0",
+  "name": "@kazzcade/salesforce-client",
+  "version": "0.1.0",
   "description": "Salesforce javascript client with rxjs",
   "main": "dist/index.js",
   "scripts": {
@@ -12,10 +12,17 @@
     "url": "git+https://github.com/kazzcade/salesforce-js-client.git"
   },
   "author": {
-    "name": "Robin Schultz",
-    "email": "robin.schultz@kazzcade.com",
-    "url": "https://github.com/anigenero"
+    "name": "Jhorlin DeArmas",
+    "email": "jhorlin.dearmas@kazzcade.com",
+    "url": "https://github.com/Jhorlin"
   },
+  "contributors": [
+    {
+      "name": "Robin Schultz",
+      "email": "robin.schultz@kazzcade.com",
+      "url": "https://github.com/anigenero"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kazzcade/salesforce-js-client/issues"

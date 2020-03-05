@@ -2,9 +2,9 @@ import * as path from 'path';
 import {readJSON} from 'fs-extra';
 import {from, iif, Observable, of, throwError, timer} from 'rxjs';
 import {filter, map, mergeMap, pluck, toArray} from 'rxjs/operators';
-import more from './lib/more';
+import {moreOperator} from './lib/more';
 import {RequestOptions, RequestPool} from './lib/requestPool';
-import status from './lib/status';
+import {statusOperator} from './lib/status';
 import {SObject, SObjectMeta, SObjectMetaSummary} from './salesforce';
 
 export type AuthRequest = {
@@ -259,7 +259,7 @@ export class SalesforceClient {
                         request.get(queryUri, requestDefault(auth)),
                     ),
                     map(toJSON),
-                    more(
+                    moreOperator(
                         (queryResponse) => !queryResponse.done,
                         (queryResponse) =>
                             of(
@@ -347,7 +347,7 @@ export class SalesforceClient {
                                         }),
                                     ),
                                     map(toJSON),
-                                    status(
+                                    statusOperator(
                                         (status) =>
                                             status.state === 'Open' ||
                                             status.state === 'Queued' ||
@@ -393,7 +393,7 @@ export class SalesforceClient {
                                             mergeMap((closeResponse) => bulkResponse.batchInfo as any[]),
                                         ),
                                     ),
-                                    status(
+                                    statusOperator(
                                         (status) =>
                                             status.state === 'Open' ||
                                             status.state === 'Queued' ||
@@ -485,7 +485,7 @@ export class SalesforceClient {
                         request.get(jobsUri, requestDefault(auth)),
                     ),
                     map(toJSON),
-                    more(
+                    moreOperator(
                         (jobs) => !jobs.done,
                         (jobs) =>
                             of(

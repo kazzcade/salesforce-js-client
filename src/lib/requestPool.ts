@@ -41,6 +41,7 @@ export class RequestPool {
             .subscribe(
                 (response) => {
                     if (logResponse) {
+                        // eslint-disable-next-line no-console
                         console.log(response);
                     }
                 },
