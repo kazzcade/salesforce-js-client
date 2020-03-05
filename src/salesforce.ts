@@ -27,7 +27,7 @@ export type SObjectFieldMetaSummary = {
     length: number;
 };
 
-export type SObjects = {
+export type SObjectMeta = {
     encoding: string;
     maxBatchSize: number;
     sobjects: {
@@ -60,53 +60,6 @@ export type SObjects = {
             describe: string;
             sobject: string;
         };
-    }[];
-};
-
-export type SObjectMeta = {
-    objectDescribe: {
-        activateable: boolean;
-        createable: boolean;
-        custom: boolean;
-        customSetting: boolean;
-        deletable: boolean;
-        deprecatedAndHidden: boolean;
-        feedEnabled: boolean;
-        hasSubtypes: boolean;
-        isSubtype: boolean;
-        keyPrefix: string;
-        label: string;
-        labelPlural: string;
-        layoutable: boolean;
-        mergeable: boolean;
-        mruEnabled: boolean;
-        name: string;
-        queryable: boolean;
-        replicateable: boolean;
-        retrieveable: boolean;
-        searchable: boolean;
-        triggerable: boolean;
-        undeletable: boolean;
-        updateable: boolean;
-        urls: {
-            compactLayouts: string;
-            rowTemplate: string;
-            approvalLayouts: string;
-            defaultValues: string;
-            listviews: string;
-            describe: string;
-            quickActions: string;
-            layouts: string;
-            sobject: string;
-        };
-    };
-    recentItems: {
-        attributes: {
-            type: string;
-            url: string;
-        };
-        Id: string;
-        Name: string;
     }[];
 };
 
