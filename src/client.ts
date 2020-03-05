@@ -332,7 +332,7 @@ export class SalesforceClient {
                             ),
                             of(fields),
                         ).pipe(
-                            mergeMap((fields) =>
+                            mergeMap((queryFields) =>
                                 of(
                                     urlTemplates.bulk(auth.instance_url, job.id),
                                 ).pipe(
@@ -341,7 +341,7 @@ export class SalesforceClient {
                                             ...requestDefault(auth),
                                             body: buildQuery(
                                                 object,
-                                                fields,
+                                                queryFields,
                                                 queryFilter,
                                             ),
                                         }),
@@ -390,7 +390,7 @@ export class SalesforceClient {
                                     ),
                                     mergeMap((bulkResponse) =>
                                         this.closeJob(job.id).pipe(
-                                            mergeMap((closeResponse) => bulkResponse.batchInfo as any[]),
+                                            mergeMap(() => bulkResponse.batchInfo as any[]),
                                         ),
                                     ),
                                     statusOperator(
