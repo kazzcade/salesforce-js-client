@@ -1,7 +1,7 @@
-# Contributing to log4js2
+# Contributing to kazzcade/salesforce-client
 
-Thanks for choosing log4js2 as your choice of logger. We would love for you to contribute to log4js2 and help make it 
-better. As a contributor, here are the guidelines we would like you to follow:
+Thanks for choosing kazzcade/salesforce-client as your choice of Salesforce client. We would love for you to contribute to 
+kazzcade/salesforce-client and help make it better. As a contributor, here are the guidelines we would like you to follow:
 
  - [Question or Problem?](#question)
  - [Issues and Bugs](#issue)
@@ -12,13 +12,13 @@ better. As a contributor, here are the guidelines we would like you to follow:
 
 There are several ways how you can ask your question:
 
-* You can create a question on [StackOverflow](https://stackoverflow.com/questions/tagged/log4js2) where the questions should be tagged with tag `log4js2`.
-* You can create issue on [github](https://github.com/log4js2/log4js2-core/issues)
+* You can create a question on [StackOverflow](https://stackoverflow.com/questions/tagged/kazz-sf-client) where the questions should be tagged with tag `kazz-sf-client`.
+* You can create issue on [github](https://github.com/kazzcade/salesforce-client/issues)
 
 ## <a name="issue"></a> Found a Bug?
 
 If you find a bug in the source code, you can help us by [submitting an issue](#submit-issue) to our 
-[GitHub Repository](https://github.com/log4js2/log4js2-core), or you can [submit a Pull Request](#submit-pr) with a fix.
+[GitHub Repository](https://github.com/kazzcade/salesforce-client), or you can [submit a Pull Request](#submit-pr) with a fix.
 
 ## <a name="feature"></a> Missing a Feature?
 
@@ -41,12 +41,12 @@ discussion might inform you of solutions, workarounds, or future releases.
 Before fixing a bug, we need to reproduce and confirm it. In order to reproduce bugs we ask you to provide a code 
 snippet that shows a reproduction of the problem. 
 
-You can file new issues by filling out our [new issue form](https://github.com/log4js2/log4js2-core/issues/new).
+You can file new issues by filling out our [new issue form](https://github.com/kazzcade/salesforce-client/issues/new).
 
 ### <a name="submit-pr"></a> Submitting a Pull Request (PR)
 Before you submit your Pull Request (PR) consider the following guidelines:
 
-- Search [GitHub](https://github.com/log4js2/log4js2-core/pulls) for an open or closed PR that relates to your submission to 
+- Search [GitHub](https://github.com/kazzcade/salesforce-client/pulls) for an open or closed PR that relates to your submission to 
 prevent duplicate submission.
 - Make your changes in a new git branch:
      ```shell
@@ -70,10 +70,10 @@ prevent duplicate submission.
     git push origin fix-branch
     ```
 
-- In GitHub, send a pull request to `log4js2:master`.
+- In GitHub, send a pull request to `kazzcade/salesforce-client:master`.
 - If we suggest changes then:
   * Make the required updates.
-  * Re-run the log4js2 test suites to ensure tests are still passing.
+  * Re-run the test suites to ensure tests are still passing.
   * Rebase your branch and force push to your GitHub repository (this will update your Pull Request):
 
     ```shell
