@@ -1,7 +1,7 @@
 import * as path from 'path';
 import {readJSON} from 'fs-extra';
 import {from, iif, Observable, of, throwError, timer} from 'rxjs';
-import {filter, map, mergeMap, pluck, toArray} from 'rxjs/operators';
+import {catchError, filter, map, mergeMap, pluck, tap, toArray} from 'rxjs/operators';
 import {moreOperator} from './lib/more';
 import {RequestOptions, RequestPool} from './lib/requestPool';
 import {statusOperator} from './lib/status';
@@ -69,7 +69,7 @@ const urlTemplates = {
             case SANDBOX:
                 return `https://${sf}.salesforce.com/services/oauth2/token`;
             default:
-                return sf;
+                return `${sf}/services/oauth2/token`;
         }
     },
     limits: (instance: string) => `${instance}/${data}/v${version}/limits`,
