@@ -145,12 +145,6 @@ export class SalesforceClient {
             ).pipe(map(toJSON));
         }
 
-        this.meta = from((readJSON(
-            path.join(__dirname, '../../../meta.json'),
-        ) as Promise<SObjectDescriptionMap>).catch((err) => {
-            console.error('Failed to read meta data. This will likely cause errors', err);
-            return {};
-        }));
     }
 
     public getAuth(): Observable<AuthResponse> {
