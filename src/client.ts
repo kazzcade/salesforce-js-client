@@ -1,7 +1,5 @@
-import * as path from 'path';
-import {readJSON} from 'fs-extra';
 import {from, iif, Observable, of, throwError, timer} from 'rxjs';
-import {catchError, filter, map, mergeMap, pluck, tap, toArray} from 'rxjs/operators';
+import {filter, map, mergeMap, pluck, toArray} from 'rxjs/operators';
 import {moreOperator} from './lib/more';
 import {RequestOptions, RequestPool} from './lib/requestPool';
 import {statusOperator} from './lib/status';
