@@ -4,6 +4,8 @@ import {moreOperator} from './lib/more';
 import {RequestOptions, RequestPool} from './lib/requestPool';
 import {statusOperator} from './lib/status';
 import {SObject, SObjectDescription, SObjectMetaSummary} from './salesforce';
+import * as path from "path";
+import {readJSON} from "fs-extra";
 
 export type AuthRequest = {
     grant_type: string;
@@ -121,7 +123,7 @@ export class SalesforceClient {
     private readonly auth: Observable<AuthResponse>;
     private meta: Observable<SObjectDescriptionMap>;
 
-    public constructor(authRequest: Partial<AuthRequest>, sf: PROD | SANDBOX | string = PROD) {
+    public constructor(authRequest: Partial<AuthRequest>, metaSrc = './meta.json', sf: PROD | SANDBOX | string = PROD) {
         if (authRequest.auth) {
             this.auth = of<AuthResponse>({
                 access_token: authRequest.auth.accessToken,
@@ -142,6 +144,8 @@ export class SalesforceClient {
                 }),
             ).pipe(map(toJSON));
         }
+
+        this.meta = from(readJSON(metaSrc) as Promise<SObjectDescriptionMap>);
 
     }
 
