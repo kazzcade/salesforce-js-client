@@ -1,6 +1,6 @@
 {
   "name": "@kazzcade/salesforcex",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Salesforce javascript client with rxjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -41,6 +41,7 @@
     "eslint": "^7.2.0",
     "eslint-plugin-import": "^2.21.1",
     "eslint-plugin-prefer-arrow": "^1.2.1",
+    "jest": "^27.3.1",
     "typescript": "^3.9.5"
   },
   "dependencies": {
@@ -49,5 +50,11 @@
     "request": "^2.88.2",
     "request-promise-native": "^1.0.8",
     "rxjs": "^6.5.5"
+  },
+  "files": [
+    "/dist"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
